@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  height: 60px;
+  padding: 10px;
+  background-color: indigo;
+}
+
+a {
+  display: grid;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
