@@ -8,7 +8,7 @@
 }
 input[type="text"] {
   border: solid 1px;
-  color: indigo;
+  color: var(--primary-color);
   padding: 10px;
   border-radius: 8px;
   margin-right: 4px;
@@ -18,10 +18,14 @@ input[type="text"] {
 button {
   padding: 10px;
   border: solid 1px;
-  color: indigo;
-  background: indigo;
-  color: white;
+  background: var(--primary-color);
+  color: var(--accent-color);
   border-radius: 8px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
 }
 
 form {
@@ -30,11 +34,11 @@ form {
 }
 @media (min-width: 500px) and (max-width: 768px) {
   .results {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1);
   }
 }
 @media (max-width: 499px) {
   .results {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1;
   }
 }

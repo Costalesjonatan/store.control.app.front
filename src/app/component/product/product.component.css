@@ -1,21 +1,34 @@
 .listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
   background: var(--accent-color);
   border-radius: 30px;
-  padding-bottom: 30px;
+  word-wrap: break-word;
 }
+
+.listing:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+
+.info{
+  border: 1px;
+    display: inline-block;
+    width: auto;
+    margin: 0 20px;
+    text-align: justify;
+}
+
 .listing-heading {
-  color: indigo;
   padding: 10px 20px 0 20px;
-}
-.listing-photo {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 30px 30px 0 0;
 }
 .listing-location {
   padding: 10px 20px 20px 20px;
 }
+
+
 section.listing a {
   padding-left: 20px;
   text-decoration: none;

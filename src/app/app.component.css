@@ -2,7 +2,8 @@ header {
   display: flex;
   height: 60px;
   padding: 10px;
-  background-color: indigo;
+  background-color: var(--primary-color);
+  box-shadow: 0px 5px 25px var(--shadow-color);
 }
 
 a {
