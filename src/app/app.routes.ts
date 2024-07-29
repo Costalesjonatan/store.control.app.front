@@ -9,8 +9,8 @@ export const routes: Routes = [
     title: 'Home page',
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: ProductDetailsComponent,
-    title: 'Home d',
+    title: 'Product details',
   },
 ];

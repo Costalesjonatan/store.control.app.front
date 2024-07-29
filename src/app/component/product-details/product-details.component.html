@@ -1,1 +1,27 @@
-<p>product-details works!</p>
+<section class="listing">
+  <div class="info">
+    <div>
+      <h2 class="listing-name">{{ product.name }}</h2>
+    </div>
+    <div>
+      <h1 class="listing-units">
+        Sku:  {{ product.sku }}
+      </h1>
+    </div>
+    <div>
+      <h1 class="listing-units">
+        Price:  {{ product.price}}
+      </h1>
+    </div>
+    <div>
+      <h1 class="listing-units">
+        Cost:  {{ product.cost }}
+      </h1>
+    </div>
+    <div>
+      <h1 class="listing-units">
+        Available units {{ product.availableUnits }}
+      </h1>
+    </div>
+  </div>
+</section>

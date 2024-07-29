@@ -14,6 +14,7 @@ export class ProductService {
     let i = 0;
     while (i < 100) {
       this.productList.push({
+        id:i,
         sku: "SKU_" + i,
         name: "NAME_" + i,
         price: 1,
@@ -23,5 +24,9 @@ export class ProductService {
       i++;
     }
     return this.productList;
+  }
+
+  getHousingLocationById(id: number) {
+    return this.productList[id];
   }
 }
