@@ -19,10 +19,17 @@ export class HomeComponent {
 
   constructor() {
     this.productList = this.productService.getProductService();
+    this.filteredProductList = this.productList;
   }
 
   filterResults(text: string) {
-    console.log(text);
+    if (!text) {
+      this.filteredProductList = this.productList;
+      return;
+    }
+    this.filteredProductList = this.productList.filter((product) =>
+      product?.name.toLowerCase().includes(text.toLowerCase()),
+    );
   }
 
 }
