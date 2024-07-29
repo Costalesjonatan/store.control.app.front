@@ -9,7 +9,7 @@ import { ProductService } from '../../service/product.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+  styleUrl: './product-details.component.scss'
 })
 export class ProductDetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);

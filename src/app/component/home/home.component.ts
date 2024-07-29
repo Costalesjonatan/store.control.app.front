@@ -9,7 +9,7 @@ import { Product } from '../../interface/product';
   standalone: true,
   imports: [CommonModule, ProductComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
