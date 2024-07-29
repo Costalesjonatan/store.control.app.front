@@ -6,13 +6,6 @@
   word-wrap: break-word;
 }
 
-.listing:hover {
-  background-color: var(--primary-color);
-  color: var(--accent-color);
-  cursor: pointer;
-}
-
-
 .info{
   border: 1px;
     display: inline-block;
@@ -21,20 +14,22 @@
     text-align: justify;
 }
 
-.listing-heading {
+.listing-name {
   padding: 10px 20px 0 20px;
 }
-.listing-location {
+.listing-units {
   padding: 10px 20px 20px 20px;
 }
 
+section.listing a:hover {
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  cursor: pointer;
+}
 
 section.listing a {
   padding-left: 20px;
   text-decoration: none;
   color: var(--primary-color);
-}
-section.listing a::after {
-  content: "\203A";
-  margin-left: 5px;
 }
