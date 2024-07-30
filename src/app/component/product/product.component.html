@@ -1,14 +1,24 @@
-<section class="listing">
-  <a [routerLink]="['/details', product.id]">
-    <div class="info">
-      <div>
-        <h2 class="listing-name">{{ product.name }}</h2>
-      </div>
-      <div>
-        <h1 class="listing-units">
-          Available units {{ product.availableUnits }}
-        </h1>
-      </div>
-    </div>
-  </a>
-</section>
+<mat-accordion class="listing">
+  <mat-expansion-panel
+    (opened)="panelOpenState.set(true)"
+    (closed)="panelOpenState.set(false)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="info">
+          <div>
+            <h2 class="listing-name">{{ product.name }}</h2>
+          </div>
+          <div>
+            <h1 class="listing-units">
+              Available units {{ product.availableUnits }}
+            </h1>
+          </div>
+        </div>
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{ panelOpenState() ? "open" : "closed" }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>

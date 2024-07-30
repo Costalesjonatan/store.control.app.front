@@ -6,12 +6,12 @@
   word-wrap: break-word;
 }
 
-.info{
+.info {
   border: 1px;
-    display: inline-block;
-    width: auto;
-    margin: 0 20px;
-    text-align: justify;
+  display: inline-block;
+  width: auto;
+  margin: 0 20px;
+  text-align: justify;
 }
 
 .listing-name {
@@ -21,7 +21,7 @@
   padding: 10px 20px 20px 20px;
 }
 
-section.listing a:hover {
+section.listing :hover {
   border-radius: 30px;
   background-color: var(--primary-color);
   color: var(--accent-color);
