@@ -1,3 +1,7 @@
+.mat-expansion-panel{
+  box-shadow: none !important;
+}
+
 .listing {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
@@ -14,22 +18,6 @@
   text-align: justify;
 }
 
-.listing-name {
-  padding: 10px 20px 0 20px;
-}
-.listing-units {
-  padding: 10px 20px 20px 20px;
-}
-
-section.listing :hover {
-  border-radius: 30px;
-  background-color: var(--primary-color);
-  color: var(--accent-color);
-  cursor: pointer;
-}
-
-section.listing a {
-  padding-left: 20px;
-  text-decoration: none;
-  color: var(--primary-color);
+.listing-info {
+  padding: 20px 20px 20px 20px;
 }
