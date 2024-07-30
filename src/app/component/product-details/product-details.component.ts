@@ -1,9 +1,13 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../interface/product';
-import { RouterLink } from '@angular/router';
-import { ChangeDetectionStrategy, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  signal,
+} from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { RouterLink } from '@angular/router';
+import { Product } from '../../interface/product';
 
 @Component({
   selector: 'app-product-details',
@@ -11,7 +15,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   imports: [CommonModule, RouterLink, MatExpansionModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailsComponent {
   @Input() product!: Product;

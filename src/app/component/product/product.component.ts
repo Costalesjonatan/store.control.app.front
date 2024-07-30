@@ -1,15 +1,24 @@
-import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../interface/product';
-import { ChangeDetectionStrategy, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  inject,
+} from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { Product } from '../../interface/product';
 import { ProductService } from '../../service/product.service';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, ProductComponent, ProductDetailsComponent],
+  imports: [
+    CommonModule,
+    MatExpansionModule,
+    ProductComponent,
+    ProductDetailsComponent,
+  ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

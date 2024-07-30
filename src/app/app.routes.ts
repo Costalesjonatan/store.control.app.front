@@ -12,5 +12,5 @@ export const routes: Routes = [
     path: 'product',
     component: ProductComponent,
     title: 'Product component',
-  }
+  },
 ];

@@ -5,7 +5,9 @@
   </button>
 </form>
 <section class="results">
-  <app-product-details *ngFor="let product of filteredProductList"
-    [product]="product">
+  <app-product-details
+    *ngFor="let product of filteredProductList"
+    [product]="product"
+  >
   </app-product-details>
 </section>
