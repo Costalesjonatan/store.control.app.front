@@ -4,6 +4,11 @@
     Search
   </button>
 </form>
+<form>
+  <button class="button.add" type="button" (click)="filterResults(filter.value)">
+    Add product
+  </button>
+</form>
 <section class="results">
   <app-product-details
     *ngFor="let product of filteredProductList"

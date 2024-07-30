@@ -9,6 +9,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { Product } from '../../interface/product';
 import { ProductService } from '../../service/product.service';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { AddProductComponent } from '../add-product/add-product.component';
 
 @Component({
   selector: 'app-product',
@@ -18,6 +19,7 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
     MatExpansionModule,
     ProductComponent,
     ProductDetailsComponent,
+    AddProductComponent
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
