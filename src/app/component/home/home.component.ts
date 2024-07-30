@@ -32,4 +32,8 @@ export class HomeComponent {
     );
   }
 
+  addProduct() {
+
+  }
+
 }
