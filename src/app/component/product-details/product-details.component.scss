@@ -1,0 +1,23 @@
+.mat-expansion-panel{
+  box-shadow: none !important;
+}
+
+.listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  background: var(--accent-color);
+  border-radius: 30px;
+  word-wrap: break-word;
+}
+
+.info {
+  border: 1px;
+  display: inline-block;
+  width: auto;
+  margin: 0 20px;
+  text-align: justify;
+}
+
+.listing-info {
+  padding: 20px 20px 20px 20px;
+}

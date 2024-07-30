@@ -1,57 +1,20 @@
-.results {
-  display: grid;
-  column-gap: 14px;
-  row-gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
-  justify-content: space-around;
+header {
+  display: flex;
+  height: 60px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  box-shadow: 0px 5px 25px var(--shadow-color);
+  position: sticky;
+  z-index: 100;
+  width: 100%;
 }
 
-input[type="text"] {
-  border: solid 1px;
-  color: var(--primary-color);
-  padding: 10px;
-  border-radius: 8px;
-  margin-right: 4px;
-  display: inline-flex;
-  width: 80%;
-}
-button {
-  padding: 10px;
-  border: solid 1px;
-  background: var(--primary-color);
-  color: var(--accent-color);
-  border-radius: 8px;
-}
-
-button.add {
+a {
   padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: solid 1px;
-  background: var(--primary-color);
-  color: var(--accent-color);
-  border-radius: 8px;
+  display: grid;
+  align-items: center;
+  color: white;
+  text-decoration: none;
 }
 
-button:hover {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-}
 
-form {
-  text-align: center;
-  margin-top: 50px;
-}
-
-@media (min-width: 500px) and (max-width: 768px) {
-  .results {
-    grid-template-columns: repeat(1, 1);
-  }
-}
-@media (max-width: 499px) {
-  .results {
-    grid-template-columns: 1;
-  }
-}

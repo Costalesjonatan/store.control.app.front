@@ -1,9 +1,14 @@
 <main>
-    <header>
-      <a [routerLink]="['/']">
-        <h1>Stock control</h1>
-      </a>
-    </header>
+  <header>
+    <a [routerLink]="['/']">
+      <h1>Stock control</h1>
+    </a>
+    <a [routerLink]="['/product']">
+      <button class="primary" type="button">
+        Products
+      </button>
+    </a>
+  </header>
   <section class="content">
     <router-outlet></router-outlet>
   </section>
