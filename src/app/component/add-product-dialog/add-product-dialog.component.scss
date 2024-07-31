@@ -1,0 +1,47 @@
+form {
+  display: grid;
+  text-align: center;
+}
+
+button {
+  width: 100px;
+  padding: 10px 10px 10px 10px;
+}
+
+
+label {
+  border: 1px;
+  display: inline-block;
+  width: auto;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+input[type="text"] {
+  border: solid 1px;
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  display: inline-flex;
+  width: auto;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.text-header {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  row-gap: 14px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}

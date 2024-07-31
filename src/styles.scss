@@ -25,3 +25,7 @@ button.primary {
   color: white;
   border-radius: 8px;
 }
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-shape: 30px;
+}

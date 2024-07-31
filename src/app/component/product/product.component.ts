@@ -8,8 +8,8 @@ import {
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Product } from '../../interface/product';
 import { ProductService } from '../../service/product.service';
-import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { AddProductComponent } from '../add-product/add-product.component';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +19,7 @@ import { AddProductComponent } from '../add-product/add-product.component';
     MatExpansionModule,
     ProductComponent,
     ProductDetailsComponent,
-    AddProductComponent
+    AddProductComponent,
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
@@ -27,6 +27,7 @@ import { AddProductComponent } from '../add-product/add-product.component';
 })
 export class ProductComponent {
   productService: ProductService = inject(ProductService);
+  addProductComponent: AddProductComponent = inject(AddProductComponent);
   productList: Product[] = [];
   filteredProductList: Product[] = [];
 
