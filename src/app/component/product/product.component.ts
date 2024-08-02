@@ -32,8 +32,7 @@ export class ProductComponent {
   filteredProductList: Product[] = [];
 
   constructor() {
-    this.productList = this.productService.getProductService();
-    this.filteredProductList = this.productList;
+    this.updateProductList();
   }
 
   @Input() product!: Product;
@@ -46,5 +45,15 @@ export class ProductComponent {
     this.filteredProductList = this.productList.filter((product) =>
       product?.name.toLowerCase().includes(text.toLowerCase())
     );
+  }
+
+  refresh(): void {
+    this.updateProductList();
+    window.location.reload();
+  }
+
+  private updateProductList() {
+    this.productList = this.productService.getAllProduct();
+    this.filteredProductList = this.productList;
   }
 }

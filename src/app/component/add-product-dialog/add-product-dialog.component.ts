@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { Product } from '../../interface/product';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-add-product-dialog',
@@ -23,24 +25,45 @@ import { MatDialogModule } from '@angular/material/dialog';
   styleUrl: './add-product-dialog.component.scss',
 })
 export class AddProductDialogComponent {
-
   private numberPatetr: any = '^^0.{0}$|^[1-9]+[0-9]*$$';
+  private productService: ProductService = inject(ProductService);
+
+  private product: Product | undefined;
+
+  constructor() {}
 
   applyForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     sku: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    cost: new FormControl('', [Validators.required, Validators.pattern(this.numberPatetr)]),
-    price: new FormControl('', [Validators.required, Validators.pattern(this.numberPatetr)]),
-    availableUnits: new FormControl('', [Validators.required, Validators.pattern(this.numberPatetr)]),
+    cost: new FormControl('', [
+      Validators.required,
+      Validators.pattern(this.numberPatetr),
+    ]),
+    price: new FormControl('', [
+      Validators.required,
+      Validators.pattern(this.numberPatetr),
+    ]),
+    availableUnits: new FormControl('', [
+      Validators.required,
+      Validators.pattern(this.numberPatetr),
+    ]),
   });
 
   submitProduct() {
-    console.log(this.applyForm.value.name ?? '');
+    if (!this.applyForm.valid) {
+      console.log('Formualrio inválido');
+    } else {
+      console.log('Formualrio válido');
+      this.productService.createProduct(
+        this.applyForm.value.sku ?? '',
+        this.applyForm.value.name ?? '',
+        Number(this.applyForm.value.price) ?? 0,
+        Number(this.applyForm.value.cost) ?? 0,
+        Number(this.applyForm.value.availableUnits) ?? 0
+      );
+    }
   }
 
-  checkField() {
-    console.log('checkField');
-  }
 
   get sku() {
     return this.applyForm.get('sku');
@@ -57,6 +80,7 @@ export class AddProductDialogComponent {
   get price() {
     return this.applyForm.get('price');
   }
+
   get availableUnits() {
     return this.applyForm.get('availableUnits');
   }
