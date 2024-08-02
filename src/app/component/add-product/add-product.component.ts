@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Injectable} from '@angular/core';
-import { MatButtonModule} from '@angular/material/button';
-import { MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
 
 @Injectable({
@@ -19,7 +19,6 @@ export class AddProductComponent {
   readonly dialog = inject(MatDialog);
 
   openDialog() {
-    console.log("Llegue a open dialog")
     const dialogRef = this.dialog.open(AddProductDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {

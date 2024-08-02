@@ -1,19 +1,64 @@
-<h2 class="text-header">Add Product</h2>
-<mat-dialog-content class="mat-typography">
-  <form [formGroup]="applyForm" (submit)="submitProduct()">
-    <label for="sku">Sku</label>
-    <input id="sku" type="text" formControlName="sku" />
-    <label for="name">Name</label>
-    <input id="name" type="text" formControlName="Name" />
-    <label for="cost">Cost</label>
-    <input id="cost" type="text" formControlName="cost" />
-    <label for="price">Price</label>
-    <input id="price" type="text" formControlName="price" />
-    <label for="available-units">Available units</label>
-    <input id="available-units" type="text" formControlName="available-units" />
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions class="buttons" align="center">
-  <button type="submit" class="primary">Submit</button>
-  <button class="primary" mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+<div class="dialog-container">
+  <div class="text-header">
+    <h2>Add Product</h2>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form id="add-product-form" [formGroup]="applyForm" (submit)="submitProduct()">
+      <label for="sku">Sku</label>
+      <input id="sku" type="text" formControlName="sku" autocomplete="off" spellcheck="false" required />
+      <div *ngIf="sku?.invalid && (sku?.dirty || sku?.touched)" class="alert-danger">
+        <div *ngIf="sku?.hasError('required')">
+          Name is required.
+        </div>
+        <div *ngIf="sku?.hasError('minlength')">
+          Name must be at least 4 characters long.
+        </div>
+      </div>
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" autocomplete="off" spellcheck="false" />
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert-danger">
+        <div *ngIf="name?.hasError('required')">
+          Sku is required.
+        </div>
+        <div *ngIf="name?.hasError('minlength')">
+          Sku must be at least 4 characters long.
+        </div>
+      </div>
+      <label for="cost">Cost</label>
+      <input id="cost" type="text" formControlName="cost" autocomplete="off" spellcheck="false" />
+      <div *ngIf="cost?.invalid && (cost?.dirty || cost?.touched)" class="alert-danger">
+        <div *ngIf="cost?.hasError('required')">
+          Cost is required.
+        </div>
+        <div *ngIf="cost?.hasError('pattern')">
+          Cost is not a number.
+        </div>
+      </div>
+      <label for="price">Price</label>
+      <input id="price" type="text" formControlName="price" autocomplete="off" spellcheck="false" />
+      <div *ngIf="price?.invalid && (price?.dirty || price?.touched)" class="alert-danger">
+        <div *ngIf="price?.hasError('required')">
+          Price is required.
+        </div>
+        <div *ngIf="price?.hasError('pattern')">
+          Price is not a number.
+        </div>
+      </div>
+      <label for="availableUnits">Available units</label>
+      <input id="availableUnits" type="text" formControlName="availableUnits" autocomplete="off" spellcheck="false" />
+      <div *ngIf="availableUnits?.invalid && (availableUnits?.dirty || availableUnits?.touched)" class="alert-danger">
+        <div *ngIf="availableUnits?.hasError('required')">
+          Available Units is required.
+        </div>
+        <div *ngIf="availableUnits?.hasError('pattern')">
+          Available units is not a number.
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="buttons" align="center">
+    <button type="submit" form="add-product-form" class="primary" mat-dialog-close>Submit</button>
+    <button class="primary" mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+
+</div>

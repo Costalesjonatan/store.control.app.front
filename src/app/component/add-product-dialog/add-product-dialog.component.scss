@@ -1,13 +1,19 @@
+.dialog-container {
+  display: grid;
+  height: 800px;
+  width: 600px;
+  align-items: center;
+}
+
+.text-header {
+  text-align: center;
+  margin-top: 50px;
+}
+
 form {
   display: grid;
   text-align: center;
 }
-
-button {
-  width: 100px;
-  padding: 10px 10px 10px 10px;
-}
-
 
 label {
   border: 1px;
@@ -23,9 +29,12 @@ input[type="text"] {
   color: var(--primary-color);
   padding: 10px;
   border-radius: 8px;
-  margin-right: 4px;
-  display: inline-flex;
   width: auto;
+}
+
+button {
+  width: 100px;
+  padding: 10px 10px 10px 10px;
 }
 
 button:hover {
@@ -33,15 +42,12 @@ button:hover {
   cursor: pointer;
 }
 
-.text-header {
-  padding-top: 50px;
-  text-align: center;
-}
-
 .buttons {
   display: grid;
   row-gap: 14px;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 50px;
+}
+
+.alert-danger {
+  color: red;
 }
