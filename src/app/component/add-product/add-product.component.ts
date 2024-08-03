@@ -32,6 +32,8 @@ export class AddProductComponent {
   openDialog() {
     const dialogRef = this.dialog.open(AddProductDialogComponent);
 
+    console.log(`Paso por acá?`);
+
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });

@@ -7,8 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { Product } from '../../interface/product';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ProductService } from '../../service/product.service';
 
 @Component({
@@ -28,9 +27,7 @@ export class AddProductDialogComponent {
   private numberPatetr: any = '^^0.{0}$|^[1-9]+[0-9]*$$';
   private productService: ProductService = inject(ProductService);
 
-  private product: Product | undefined;
-
-  constructor() {}
+  constructor(public dialogRef: MatDialogRef<AddProductDialogComponent>) {}
 
   applyForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -50,10 +47,7 @@ export class AddProductDialogComponent {
   });
 
   submitProduct() {
-    if (!this.applyForm.valid) {
-      console.log('Formualrio inválido');
-    } else {
-      console.log('Formualrio válido');
+    if (this.applyForm.valid) {
       this.productService.createProduct(
         this.applyForm.value.sku ?? '',
         this.applyForm.value.name ?? '',
@@ -61,9 +55,9 @@ export class AddProductDialogComponent {
         Number(this.applyForm.value.cost) ?? 0,
         Number(this.applyForm.value.availableUnits) ?? 0
       );
+      this.dialogRef.close('Submit succesfully');
     }
   }
-
 
   get sku() {
     return this.applyForm.get('sku');
