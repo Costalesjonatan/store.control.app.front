@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  inject,
+  inject
 } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Product } from '../../interface/product';
@@ -37,7 +37,7 @@ export class ProductComponent {
 
   @Input() product!: Product;
 
-  filterResults(text: string) {
+  filterResultsByName(text: string) {
     if (!text) {
       this.filteredProductList = this.productList;
       return;

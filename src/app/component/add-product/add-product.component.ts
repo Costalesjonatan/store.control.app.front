@@ -8,6 +8,8 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -26,16 +28,16 @@ import { AddProductDialogComponent } from '../add-product-dialog/add-product-dia
   styleUrl: './add-product.component.scss',
 })
 export class AddProductComponent {
+  @Output() productUploaded: EventEmitter<string> = new EventEmitter<string>();
   readonly dialog = inject(MatDialog);
-  data: any;
+
+  constructor(){}
 
   openDialog() {
     const dialogRef = this.dialog.open(AddProductDialogComponent);
 
-    console.log(`Paso por acá?`);
-
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      this.productUploaded.emit();
     });
   }
 }

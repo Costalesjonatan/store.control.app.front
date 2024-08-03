@@ -16,14 +16,6 @@ export class ProductService {
     cost: number,
     availableUnits: number
   ) {
-    console.log({
-      id: this.productList.length + 1,
-      sku: sku,
-      name: name,
-      price: price,
-      cost: cost,
-      availableUnits: availableUnits,
-    });
     this.productList.push({
       id: this.productList.length + 1,
       sku: sku,
@@ -35,6 +27,7 @@ export class ProductService {
   }
 
   getAllProduct() {
+    console.log(this.productList.length)
     if (this.productList.length == 0) {
       let i = 0;
       while (i < 100) {
